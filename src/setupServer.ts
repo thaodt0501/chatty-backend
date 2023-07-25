@@ -54,7 +54,7 @@ export class ChattyServer {
     app.use(helmet());
     app.use(
       cors({
-        origin: config.CURRENT_URL,
+        origin: config.CLIENT_URL,
         credentials: true,
         optionsSuccessStatus: 200,
         methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
@@ -110,7 +110,7 @@ export class ChattyServer {
   private async createSocketIO(httpServer: http.Server): Promise<Server> {
     const io: Server = new Server(httpServer, {
       cors: {
-        origin: config.CURRENT_URL,
+        origin: config.CLIENT_URL,
         methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
       },
     });
@@ -129,6 +129,6 @@ export class ChattyServer {
   }
 
   private socketIOConnection(io: Server): void {
-    // log.info('socketIOConnection', io);
+    log.info('socketIOConnection');
   }
 }
