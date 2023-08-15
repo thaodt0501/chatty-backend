@@ -15,7 +15,7 @@ import { omit } from 'lodash';
 import { authQueue } from '@service/queues/auth.queue';
 import { userQueue } from '@service/queues/user.queue';
 import JWT from 'jsonwebtoken';
-import { config } from '@root.config';
+import { config } from '@root/config';
 
 const userCache: UserCache = new UserCache();
 

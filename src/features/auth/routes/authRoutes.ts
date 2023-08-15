@@ -1,6 +1,7 @@
-import { SignIn } from '@auth/countrollers/signin';
-import { SignOut } from '@auth/countrollers/signout';
-import { Signup } from '@auth/countrollers/signup';
+import { Password } from '@auth/controllers/password';
+import { SignIn } from '@auth/controllers/signin';
+import { SignOut } from '@auth/controllers/signout';
+import { Signup } from '@auth/controllers/signup';
 import express, { Router } from 'express';
 
 class AuthRoutes {
@@ -12,7 +13,10 @@ class AuthRoutes {
 
   public routes(): Router {
     this.router.post('/signup', Signup.prototype.create);
-    this.router.post('/signin', SignIn.prototype.read);
+    this.router.get('/signin', SignIn.prototype.read);
+    this.router.post('/forgot-password', Password.prototype.create);
+    this.router.post('/reset-password/:token', Password.prototype.update);
+
 
     return this.router;
   }

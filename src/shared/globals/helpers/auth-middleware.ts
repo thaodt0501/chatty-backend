@@ -1,5 +1,5 @@
 import { AuthPayload } from '@auth/interfaces/auth.interface';
-import { config } from '@root.config';
+import { config } from '@root/config';
 import { NextFunction, Request, Response } from 'express';
 import JWT from 'jsonwebtoken';
 import { NotAuthorizedError } from 'src/shared/globals/helpers/error-handler';

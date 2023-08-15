@@ -1,6 +1,6 @@
 import { ServerError } from '@global/helpers/error-handler';
 import { Helpers } from '@global/helpers/helpers';
-import { config } from '@root.config';
+import { config } from '@root/config';
 import { BaseCache } from '@service/redis/base.cache';
 import { IUserDocument } from '@user/interfaces/user.interface';
 import Logger from 'bunyan';
